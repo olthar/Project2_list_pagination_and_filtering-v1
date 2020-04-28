@@ -65,8 +65,13 @@ function showSearch(text){
    if (totalFound < 1){
       removePagination();
       negativeSearchDisplay.textContent = `No Students were found containing: ${text}`;
+   // Removes page numbers for less than 11 results 
+   }else if  (totalFound < 11){
+      showPage(1,searchList);
+      removePagination();
+      negativeSearchDisplay.textContent = "";
    // Else send the results to the showPage function and get new page numbers. 
-   } else {
+   }else {
       showPage(1,searchList);
       appendPageLinks(searchList);
       negativeSearchDisplay.textContent = "";
