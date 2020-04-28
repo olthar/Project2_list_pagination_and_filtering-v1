@@ -105,7 +105,7 @@ const active = pageDiv.querySelector('.active')
 // Listen for search
 search.addEventListener('keyup',(e) => {
    e.preventDefault();
-   const text = input.value;
+   const text = input.value.toLowerCase();
    //  if deleting the search, when input is empty it refreshes page back to 1
    if (text === ''){
       location.reload();
@@ -115,7 +115,7 @@ search.addEventListener('keyup',(e) => {
 search.addEventListener('click', (e) => {
    if(e.target.tagName === 'BUTTON'){
       if (event.target.textContent == 'search') { 
-      text = input.value;
+      text = input.value.toLowerCase();
       showSearch(text);
       } else if(e.target.textContent === 'all'){
                location.reload();
