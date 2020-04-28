@@ -6,8 +6,7 @@ FSJS project 2 - List Filter and Pagination
 const li = document.querySelector('.student-list');
 const studentsPerPage = 10;
 
-// function to hide students except for selected page
-// function is also run as part of search
+// function to hide students except for the selected page
 function showPage(page, list){
    for (let i=0; i<list.length;i+=1){
       const student = list[i]
@@ -60,9 +59,7 @@ function showSearch(text){
       if (text == studentName || studentName.includes(text)){
          totalFound += 1;
          searchList.push(student);
-      } else {
-          student.style.display = 'none';
-      }
+      } else {student.style.display = 'none';}
    }
    // Let user know there are no results of their current search
    if (totalFound < 1){
